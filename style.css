@@ -6,8 +6,29 @@ video {
     min-height: 50%;
     width: auto;
     height: auto;
-    z-index: -100;
+    z-index: -999;
     transform: translateX(-50%)
                translateY(-50%);
 }
 
+#banner { 
+    font-family: Ariel Black, Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+    font-weight:100;
+    text-align:center;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    width: 100%;
+    font-size: 1.2rem;
+    transform: translateY(130%);
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: lowercase;
+    margin-top: 0;
+    letter-spacing: .3rem;
+}
+
+p {
+    transform: translateY(-50%);
+}
