@@ -29,6 +29,6 @@ h1 {
     letter-spacing: .3rem;
 }
 
-p {
+#launch_date {
     transform: translateY(-50%);
 }
