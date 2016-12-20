@@ -2,5 +2,5 @@
 
 Edward Hong and Drew Poovey
 
-EAPong Corp
+APEong Corp
 

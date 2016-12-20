@@ -1,4 +1,4 @@
-video { 
+video {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -11,6 +11,13 @@ video {
                translateY(-50%);
 }
 
+h1 {
+    font-size: 3rem;
+    text-transform: lowercase;
+    margin-top: 0;
+    letter-spacing: .3rem;
+}
+
 #banner { 
     font-family: Ariel Black, Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
     font-weight:100;
@@ -20,13 +27,6 @@ video {
     width: 100%;
     font-size: 1.2rem;
     transform: translateY(130%);
-}
-
-h1 {
-    font-size: 3rem;
-    text-transform: lowercase;
-    margin-top: 0;
-    letter-spacing: .3rem;
 }
 
 #launch_date {
