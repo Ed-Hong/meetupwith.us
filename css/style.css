@@ -38,17 +38,33 @@ a {
     transform: translateY(-50%);
 }
 
+#logo {
+    max-width: 10%;
+    min-width: 10%;
+    top: 50%;
+    left: 50%;
+    transform:  translateY(325%)
+                translateX(-1%);
+}
+
 @media screen and (max-width: 1020px) {
-  #banner {
-    float: none;
-    width: auto;
-    transform: translateY(300%);
-  }
+    #banner {
+        float: none;
+        width: auto;
+        transform: translateY(300%);
+    }
 
-  video{
-    width: 275%;
-    height: 275%;
-  }
+    #logo {
+        transform:  translateY(350%)
+                    translateX(-1%);
+        max-width: 30%;
+        min-height: 30%;
+    }
 
-  p{ font-size: 2em; }
+    video{
+        width: 275%;
+        height: 275%;
+    }
+
+    p{ font-size: 2em; }
 }
