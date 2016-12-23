@@ -23,7 +23,7 @@ a {
     text-decoration: none;
 }
 
-#banner { 
+#banner {
     font-family: Ariel Black, Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
     font-weight:100;
     text-align:center;
@@ -55,10 +55,10 @@ a {
     }
 
     #logo {
-        transform:  translateY(350%)
-                    translateX(-1%);
         max-width: 30%;
         min-height: 30%;
+        transform:  translateY(350%)
+                    translateX(-1%);
     }
 
     video{
