@@ -1,7 +1,7 @@
 /**
  * Created by kfu on 6/24/16.
  */
-import status from '../../../api/controller/status.es6';
+import * as status from '../../../api/controller/status.es6';
 import {clear} from '../../../models/mongo/index.es6';
 import assert from 'assert';
 

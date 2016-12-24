@@ -4,7 +4,7 @@ var _bluebird = require('bluebird');
 
 var _status = require('../../../api/controller/status.compiled.js');
 
-var _status2 = _interopRequireDefault(_status);
+var status = _interopRequireWildcard(_status);
 
 var _index = require('../../../models/mongo/index.compiled.js');
 
@@ -13,6 +13,8 @@ var _assert = require('assert');
 var _assert2 = _interopRequireDefault(_assert);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 describe('Status DB API', () => {
   const attributes = {
@@ -25,7 +27,7 @@ describe('Status DB API', () => {
 
   describe('#create()', () => {
     it('should create a Status object with attributes successfully', (0, _bluebird.coroutine)(function* () {
-      const stat = yield _status2.default.create(attributes.descrip, true);
+      const stat = yield status.create(attributes.descrip, true);
       _assert2.default.equal(stat.description, attributes.descrip);
       _assert2.default.equal(stat.availability, true);
     }));
