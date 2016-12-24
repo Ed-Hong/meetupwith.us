@@ -7,8 +7,8 @@
     "username": "botty",
     "password": "password",
     "database": "meetup_db",
-    "host": "127.0.0.1",
-    "port": "27017"
+    "host": "ds141128.mlab.com",
+    "port": "41128"
   },
   "NodeEnv": "development",
   "AppBranch": "local"
