@@ -26,7 +26,8 @@
 
 ## File-based project format:
 *.iws
-
+## log lol
+*npm-debug.log
 ## Plugin-specific files:
 
 # IntelliJ

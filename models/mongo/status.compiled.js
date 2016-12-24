@@ -16,7 +16,7 @@ const statusSchema = new _mongoose2.default.Schema({
     required: false
   },
   availability: {
-    type: boolean,
+    type: Boolean,
     required: true,
     default: false
   }
