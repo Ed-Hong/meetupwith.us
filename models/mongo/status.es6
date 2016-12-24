@@ -7,7 +7,7 @@ const statusSchema = new mongoose.Schema({
       required: false
     },
     availability: {
-      type: boolean,
+      type: Boolean,
       required: true,
       default: false
     }

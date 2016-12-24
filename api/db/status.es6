@@ -1,48 +1,29 @@
-import fs from 'fs';
-import path from 'path';
-import config from 'config';
-import mongoose from 'mongoose';
-import Promise from 'bluebird';
+import models from '../../models/mongo/index.es6';
+const Status = models.Status;
 
-const mongoConfig = config.get('MongoDb');
-mongoose.Promise = Promise;
-mongoose.connect(`mongodb://${mongoConfig.host}:${mongoConfig.port}/${mongoConfig.database}`);
-console.log(`Mongo DB [host|port|database]: [${mongoConfig.host}|${mongoConfig.port}|${mongoConfig.database}]`);
-
-const basename = path.basename(module.filename);
-const db = Object.create(null);
-
-/* This makes all of the mongodb models available through this single file by exporting all of
- * the individual models. We're importing each <model>.es6 file manually by scanning the directory
- * and then re-exporting the model*/
-
-fs.readdirSync(__dirname)
-  .filter(file => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js'))
-  .forEach(file => {
-    const model = require(path.join(__dirname, file)).default;
-    db[model.modelName] = model;
-    exports[model.modelName] = model;
-  });
-
-/*
- * Closes the connection to mongodb
+/**
+ * Creates a Status object based off the schema
+ * @param {*} attributes: the attributes to add to the hour of the producers
+ * @returns {Promise} the created object
  */
-export async function close() {
-  mongoose.connection.close();
+
+export async function create(attributes) {
+  return await (new Status(attributes)).save();
+}
+/**
+ *Returns a Status object given a query
+ *@param {Object} attributes: key value pairs of the attributes we want to query by
+ *@returns {Promise}: returns a SocketToken object
+ */
+export async function findOne(attributes) {
+  return await Status.findOne(attributes).exec();
 }
 
-/*
- * Clears all collections in mongodb. Used for testing purposes
- */
-export async function clear() {
-  const collections = mongoose.connection.collections;
-  for (const col in collections) { //eslint-disable-line
-    if (collections.hasOwnProperty(col)) {
-      collections[col].remove();
-    }
+
+export async function findOneAndUpdate(conditions, updates, options = null) {
+  const status = await Status.findOneAndUpdate(conditions, updates, options).exec();
+  if (Utils.isEmpty(status)) {
+    throw new Error(`Could not find and update status with attributes: ${conditions} with updates ${updates}`);
   }
+  return status;
 }
-
-db.mongoose = mongoose;
-
-export default db;

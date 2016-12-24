@@ -3,88 +3,64 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.clear = exports.close = undefined;
+exports.findOneAndUpdate = exports.findOne = exports.create = undefined;
 
 var _bluebird = require('bluebird');
 
-var _bluebird2 = _interopRequireDefault(_bluebird);
+// const Status = models.Status;
 
-var _create = require('babel-runtime/core-js/object/create');
-
-var _create2 = _interopRequireDefault(_create);
-
-/*
- * Closes the connection to mongodb
+/**
+ * Creates a Status object based off the schema
+ * @param {*} attributes: the attributes to add to the hour of the producers
+ * @returns {Promise} the created object
  */
-let close = exports.close = (() => {
-  var _ref = (0, _bluebird.coroutine)(function* () {
-    _mongoose2.default.connection.close();
+
+let create = exports.create = (() => {
+  var _ref = (0, _bluebird.coroutine)(function* (attributes) {
+    return yield new _status2.default(attributes).save();
   });
 
-  return function close() {
+  return function create(_x) {
     return _ref.apply(this, arguments);
   };
 })();
-
-/*
- * Clears all collections in mongodb. Used for testing purposes
+/**
+ *Returns a Status object given a query
+ *@param {Object} attributes: key value pairs of the attributes we want to query by
+ *@returns {Promise}: returns a SocketToken object
  */
 
 
-let clear = exports.clear = (() => {
-  var _ref2 = (0, _bluebird.coroutine)(function* () {
-    const collections = _mongoose2.default.connection.collections;
-    for (const col in collections) {
-      //eslint-disable-line
-      if (collections.hasOwnProperty(col)) {
-        collections[col].remove();
-      }
-    }
+let findOne = exports.findOne = (() => {
+  var _ref2 = (0, _bluebird.coroutine)(function* (attributes) {
+    return yield _status2.default.findOne(attributes).exec();
   });
 
-  return function clear() {
+  return function findOne(_x2) {
     return _ref2.apply(this, arguments);
   };
 })();
 
-var _fs = require('fs');
+let findOneAndUpdate = exports.findOneAndUpdate = (() => {
+  var _ref3 = (0, _bluebird.coroutine)(function* (conditions, updates) {
+    let options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
-var _fs2 = _interopRequireDefault(_fs);
+    const status = yield _status2.default.findOneAndUpdate(conditions, updates, options).exec();
+    if (Utils.isEmpty(status)) {
+      throw new Error(`Could not find and update status with attributes: ${ conditions } with updates ${ updates }`);
+    }
+    return status;
+  });
 
-var _path = require('path');
+  return function findOneAndUpdate(_x3, _x4) {
+    return _ref3.apply(this, arguments);
+  };
+})();
 
-var _path2 = _interopRequireDefault(_path);
+var _status = require('../../models/mongo/status.compiled.js');
 
-var _config = require('config');
-
-var _config2 = _interopRequireDefault(_config);
-
-var _mongoose = require('mongoose');
-
-var _mongoose2 = _interopRequireDefault(_mongoose);
+var _status2 = _interopRequireDefault(_status);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-const mongoConfig = _config2.default.get('MongoDb');
-_mongoose2.default.Promise = _bluebird2.default;
-_mongoose2.default.connect(`mongodb://${ mongoConfig.host }:${ mongoConfig.port }/${ mongoConfig.database }`);
-console.log(`Mongo DB [host|port|database]: [${ mongoConfig.host }|${ mongoConfig.port }|${ mongoConfig.database }]`);
-
-const basename = _path2.default.basename(module.filename);
-const db = (0, _create2.default)(null);
-
-/* This makes all of the mongodb models available through this single file by exporting all of
- * the individual models. We're importing each <model>.es6 file manually by scanning the directory
- * and then re-exporting the model*/
-
-_fs2.default.readdirSync(__dirname).filter(file => file.indexOf('.') !== 0 && file !== basename && file.slice(-3) === '.js').forEach(file => {
-  const model = require(_path2.default.join(__dirname, file)).default;
-  db[model.modelName] = model;
-  exports[model.modelName] = model;
-});
-
-db.mongoose = _mongoose2.default;
-
-exports.default = db;
 
 //# sourceMappingURL=status.compiled.js.map

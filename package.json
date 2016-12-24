@@ -6,7 +6,7 @@
   "scripts": {
     "webpack": "webpack",
     "compile": "grunt compile",
-    "test": "set -e; export NODE_ENV=test; --timeout 15000 -R dot",
+    "test": "set -e; export NODE_ENV=test; mocha --timeout 15000 -R dot",
     "tests": "set -e; export NODE_ENV=test; for f in $(find ./test -name '*-test.compiled.js'); do npm run test $f; done"
   },
   "repository": {
@@ -44,6 +44,7 @@
     "grunt-babel": "^6.0.0",
     "grunt-contrib-clean": "^1.0.0",
     "load-grunt-tasks": "^3.5.2",
+    "mocha": "^3.2.0",
     "mongoose": "^4.7.4",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
