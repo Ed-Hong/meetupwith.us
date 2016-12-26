@@ -30,6 +30,9 @@
 *npm-debug.log
 ## Plugin-specific files:
 
+#compiled/js
+*.compiled.js
+*.compiled.js.map
 # IntelliJ
 /out/
 
