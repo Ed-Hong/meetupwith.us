@@ -2,46 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6a3f627-6017-418a-aa3a-5cb528739b47" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/gauge/node_modules/.bin/supports-color" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/gauge/node_modules/supports-color/cli.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/gauge/node_modules/supports-color/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/gauge/node_modules/supports-color/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/gauge/node_modules/supports-color/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/node_modules/.bin/rimraf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/node_modules/rimraf/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/node_modules/rimraf/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/node_modules/rimraf/bin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/node_modules/rimraf/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/node_modules/rimraf/rimraf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/rimraf/AUTHORS" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/rimraf/test/run.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/rimraf/test/setup.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/rimraf/test/test-async.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/rimraf/test/test-sync.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/supports-color/license" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/tar-pack/node_modules/.bin/rimraf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/tar-pack/node_modules/rimraf/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/tar-pack/node_modules/rimraf/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/tar-pack/node_modules/rimraf/bin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/tar-pack/node_modules/rimraf/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/tar-pack/node_modules/rimraf/rimraf.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/controller/status.es6" afterPath="$PROJECT_DIR$/api/controller/status.es6" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/db/status.es6" afterPath="$PROJECT_DIR$/api/db/status.es6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/glob/README.md" afterPath="$PROJECT_DIR$/node_modules/glob/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/glob/common.js" afterPath="$PROJECT_DIR$/node_modules/glob/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/glob/glob.js" afterPath="$PROJECT_DIR$/node_modules/glob/glob.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/glob/package.json" afterPath="$PROJECT_DIR$/node_modules/glob/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/glob/sync.js" afterPath="$PROJECT_DIR$/node_modules/glob/sync.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/rimraf/LICENSE" afterPath="$PROJECT_DIR$/node_modules/rimraf/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/rimraf/README.md" afterPath="$PROJECT_DIR$/node_modules/rimraf/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/rimraf/bin.js" afterPath="$PROJECT_DIR$/node_modules/rimraf/bin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/rimraf/package.json" afterPath="$PROJECT_DIR$/node_modules/rimraf/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/rimraf/rimraf.js" afterPath="$PROJECT_DIR$/node_modules/rimraf/rimraf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/supports-color/index.js" afterPath="$PROJECT_DIR$/node_modules/supports-color/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/supports-color/package.json" afterPath="$PROJECT_DIR$/node_modules/supports-color/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/supports-color/readme.md" afterPath="$PROJECT_DIR$/node_modules/supports-color/readme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/api/db/status-test.es6" afterPath="$PROJECT_DIR$/test/api/db/status-test.es6" />
     </list>
     <ignored path="meetupwith.us.iws" />
@@ -62,16 +25,28 @@
     <favorites_list name="meetupwith.us" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.4420191">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="status-test.es6" pinned="false" current-in-tab="true">
+          <file leaf-file-name="status-test.es6" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/api/db/status-test.es6">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="531">
-                  <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+                <state relative-caret-position="-9">
+                  <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
                   <folding>
-                    <element signature="e#0#53#0" expanded="true" />
+                    <element signature="e#31#84#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="status.es6" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/api/db/status.es6">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+                  <folding>
+                    <marker date="1482795176786" expanded="true" signature="381:1203" ph="//..." />
                   </folding>
                 </state>
               </provider>
@@ -143,24 +118,12 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="status.es6" pinned="false" current-in-tab="false">
+          <file leaf-file-name="status.es6" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/api/controller/status.es6">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="72">
-                  <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+                <state relative-caret-position="743">
+                  <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="status.es6" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/api/db/status.es6">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-                  <folding>
-                    <marker date="1482794601220" expanded="true" signature="350:1172" ph="//..." />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -189,8 +152,8 @@
         <option value="$PROJECT_DIR$/test/api/db/status-test.compiled.js" />
         <option value="$PROJECT_DIR$/lib/auth/bcrypt.es6" />
         <option value="$PROJECT_DIR$/api/db/status.es6" />
-        <option value="$PROJECT_DIR$/api/controller/status.es6" />
         <option value="$PROJECT_DIR$/test/api/db/status-test.es6" />
+        <option value="$PROJECT_DIR$/api/controller/status.es6" />
       </list>
     </option>
   </component>
@@ -441,12 +404,12 @@
       <workItem from="1482463248658" duration="1414000" />
       <workItem from="1482544238061" duration="7597000" />
       <workItem from="1482785954241" duration="13000" />
-      <workItem from="1482792675184" duration="1944000" />
+      <workItem from="1482792675184" duration="3328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22108000" />
+    <option name="totallyTimeSpent" value="23492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -494,7 +457,7 @@
         <state relative-caret-position="300">
           <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
           <folding>
-            <marker date="1482794601220" expanded="true" signature="350:1172" ph="//..." />
+            <marker date="1482795176786" expanded="true" signature="381:1203" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -632,6 +595,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -647,6 +611,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -663,7 +628,7 @@
         <state relative-caret-position="324">
           <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="19" selection-end-column="46" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -742,31 +707,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/controller/status.es6">
+    <entry file="file://$PROJECT_DIR$/test/api/db/status-test.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="-9">
+          <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+          <folding>
+            <element signature="e#31#84#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/db/status.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        <state relative-caret-position="0">
+          <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
           <folding>
-            <marker date="1482794601220" expanded="true" signature="350:1172" ph="//..." />
+            <marker date="1482795176786" expanded="true" signature="381:1203" ph="//..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/api/db/status-test.es6">
+    <entry file="file://$PROJECT_DIR$/api/controller/status.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="743">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
