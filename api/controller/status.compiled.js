@@ -9,7 +9,7 @@ var _bluebird = require('bluebird');
 
 let create = exports.create = (() => {
   var _ref = (0, _bluebird.coroutine)(function* (bool, descrip) {
-    return yield _status2.default.create({ description: descrip, availability: bool });
+    return yield _statusCompiled2.default.create({ description: descrip, availability: bool });
   });
 
   return function create(_x, _x2) {
@@ -17,9 +17,9 @@ let create = exports.create = (() => {
   };
 })();
 
-var _status = require('../db/status.compiled.js');
+var _statusCompiled = require('../db/status.compiled.js');
 
-var _status2 = _interopRequireDefault(_status);
+var _statusCompiled2 = _interopRequireDefault(_statusCompiled);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
