@@ -1,10 +1,10 @@
-import status from '../../../api/controller/status.es6';
+import * as status from '../../../api/db/status.es6';
 import {clear} from '../../../models/mongo/index.es6';
 import assert from 'assert';
 
 describe('Status DB API', () => {
   const attributes = {
-    available: 'some action',
+    available: true,
     descrip: "Hello World!" // eslint-disable-line
   };
   beforeEach(async () => {
@@ -13,9 +13,59 @@ describe('Status DB API', () => {
 
   describe('#create()', () => {
      it('should create a Status object with attributes successfully', async () => {
-      const stat = await status.create(attributes.descrip, true);
+      const stat = await status.create({description: attributes.descrip,
+        availability: attributes.available});
       assert.equal(stat.description, attributes.descrip);
-      assert.equal(stat.availability, true);
+      assert.equal(stat.availability, attributes.available);
     });
   });
+
+  describe('#findOne()', () => {
+    it('should failt to find an uncreated Status object', async () => {
+        try{
+          await status.findOne({availability: true});
+        } catch(e) { return;}
+        assert(false);
+    });
+
+    it('should failt to find a Status object when several exist', async () => {
+      await status.create({description: attributes.descrip,
+        availability: attributes.available});
+      await status.create({description: "studying",
+        availability: false});
+      try {
+        await findOne({description: "goodbye world"});
+      } catch (e) {
+        return;
+      } assert(false);
+    });
+
+    it('should find a created Status object successfully', async () => {
+      const {_id} = await status.create({description: attributes.descrip,
+        availability: attributes.available});
+      const stat = await status.findOne(_id);
+      assert.equal(stat.description, attributes.descrip);
+      assert.equal(stat.availability, attributes.available);
+    });
+  });
+
+  describe('#findOneAndUpdate()', () => {
+    it('should failt to find and update a Status object that does not exist', async () => {
+      try {
+        await status.findOneAndUpdate({availability: true}, {description: "studying",
+          availability: false});
+      } catch (e) { return;}
+      assert(false);
+    });
+
+    it('should find and update a Status object successfully', async () => {
+      const {_id} = await status.create({description: attributes.descrip,
+        availability: attributes.available});
+      const stat = await status.findOneAndUpdate({_id}, {description: "studying",
+        availability: false});
+      assert.equal(stat.description, "studying");
+      assert.equal(stat.availability, false);
+    });
+  });
+
 });

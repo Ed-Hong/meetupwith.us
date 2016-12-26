@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.create = undefined;
+exports.findOneAndUpdate = exports.findOne = exports.create = undefined;
 
 var _bluebird = require('bluebird');
 
@@ -22,24 +22,47 @@ let create = exports.create = (() => {
     return _ref.apply(this, arguments);
   };
 })();
-// /**
-//  *Returns a Status object given a query
-//  *@param {Object} attributes: key value pairs of the attributes we want to query by
-//  *@returns {Promise}: returns a SocketToken object
-//  */
-// export async function findOne(attributes) {
-//   return await Status.findOne(attributes).exec();
-// }
-//
-//
-// export async function findOneAndUpdate(conditions, updates, options = null) {
-//   const status = await Status.findOneAndUpdate(conditions, updates, options).exec();
-//   if ((status ==  null)) { //todo utils doesnt exist here
-//     throw new Error(`Could not find and update status with attributes: ${conditions} with updates ${updates}`);
-//   }
-//   return status;
-// }
+/**
+ *Returns a Status object given a query
+ *@param {Object} attributes: key value pairs of the attributes we want to query by
+ *@returns {Promise}: returns a SocketToken object
+ */
 
+
+let findOne = exports.findOne = (() => {
+  var _ref2 = (0, _bluebird.coroutine)(function* (attributes) {
+    return yield Status.findOne(attributes).exec();
+  });
+
+  return function findOne(_x2) {
+    return _ref2.apply(this, arguments);
+  };
+})();
+
+/**
+ * 
+ * @param {Object} conditions: the conditions to find the object by
+ * @param {Object} updates: the updated fields
+ * @param {Object} options: options to pass for the query and update
+ * @returns {Promise}
+ */
+
+
+let findOneAndUpdate = exports.findOneAndUpdate = (() => {
+  var _ref3 = (0, _bluebird.coroutine)(function* (conditions, updates) {
+    let options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+    const status = yield Status.findOneAndUpdate(conditions, updates, options).exec();
+    if (status == null) {
+      throw new Error(`Could not find and update status with attributes: ${ conditions } with updates ${ updates }`);
+    }
+    return status;
+  });
+
+  return function findOneAndUpdate(_x3, _x4) {
+    return _ref3.apply(this, arguments);
+  };
+})();
 
 var _index = require('../../models/mongo/index.compiled.js');
 
