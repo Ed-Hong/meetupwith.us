@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6a3f627-6017-418a-aa3a-5cb528739b47" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/controller/status.es6" afterPath="$PROJECT_DIR$/api/controller/status.es6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/db/status.es6" afterPath="$PROJECT_DIR$/api/db/status.es6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/api/db/status-test.es6" afterPath="$PROJECT_DIR$/test/api/db/status-test.es6" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/api/controller/status-test.es6" afterPath="$PROJECT_DIR$/test/api/controller/status-test.es6" />
     </list>
     <ignored path="meetupwith.us.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +22,7 @@
     <favorites_list name="meetupwith.us" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4420191">
+    <splitter split-orientation="horizontal" split-proportion="0.5409277">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="status-test.es6" pinned="false" current-in-tab="false">
@@ -40,11 +37,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="status.es6" pinned="false" current-in-tab="true">
+          <file leaf-file-name="status.es6" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/api/db/status.es6">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+                <state relative-caret-position="576">
+                  <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
                   <folding>
                     <marker date="1482795176786" expanded="true" signature="381:1203" ph="//..." />
                   </folding>
@@ -52,13 +49,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="status-test.es6" pinned="false" current-in-tab="false">
+          <file leaf-file-name="status-test.es6" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/api/controller/status-test.es6">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="234">
-                  <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+                <state relative-caret-position="761">
+                  <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
+                    <element signature="e#43#104#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -121,8 +119,8 @@
           <file leaf-file-name="status.es6" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/api/controller/status.es6">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="743">
-                  <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+                <state relative-caret-position="459">
+                  <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -154,6 +152,7 @@
         <option value="$PROJECT_DIR$/api/db/status.es6" />
         <option value="$PROJECT_DIR$/test/api/db/status-test.es6" />
         <option value="$PROJECT_DIR$/api/controller/status.es6" />
+        <option value="$PROJECT_DIR$/test/api/controller/status-test.es6" />
       </list>
     </option>
   </component>
@@ -404,12 +403,12 @@
       <workItem from="1482463248658" duration="1414000" />
       <workItem from="1482544238061" duration="7597000" />
       <workItem from="1482785954241" duration="13000" />
-      <workItem from="1482792675184" duration="3328000" />
+      <workItem from="1482792675184" duration="6041000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23492000" />
+    <option name="totallyTimeSpent" value="26205000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -697,16 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/api/controller/status-test.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/api/db/status-test.es6">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9">
@@ -719,8 +708,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/db/status.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+        <state relative-caret-position="576">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
           <folding>
             <marker date="1482795176786" expanded="true" signature="381:1203" ph="//..." />
           </folding>
@@ -729,9 +718,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/controller/status.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+        <state relative-caret-position="459">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/api/controller/status-test.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="761">
+          <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#43#104#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
