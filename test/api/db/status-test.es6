@@ -9,7 +9,6 @@ describe('Status DB API', () => {
     descrip: "Hello World!" // eslint-disable-line
   };
   beforeEach(async () => {
-    console.log('clearing');
     await clear();
   });
 

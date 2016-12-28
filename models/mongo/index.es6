@@ -7,8 +7,7 @@ import Promise from 'bluebird';
 const mongoConfig = config.get('MongoDb');
 mongoose.Promise = Promise;
 //mongodb://<dbuser>:<dbpassword>@ds145148.mlab.com:45148/heroku_ghm9fvzv
-// mongoose.connect(`mongodb://${mongoConfig.user}:${mongoConfig.password}@${mongoConfig.host}:${mongoConfig.port}/${mongoConfig.database}`);
-mongoose.connect(`mongodb://apoovey:abc123@ds145148.mlab.com:45148/heroku_ghm9fvzv`);
+mongoose.connect(`mongodb://${mongoConfig.username}:${mongoConfig.password}@${mongoConfig.host}:${mongoConfig.port}/${mongoConfig.database}`);
 console.log(`Mongo DB [host|port|database]: [${mongoConfig.host}|${mongoConfig.port}|${mongoConfig.database}]`);
 
 const basename = path.basename(module.filename);
