@@ -32,7 +32,7 @@ describe('Status DB API', () => {
 
     it('should fail to find a Status object when several exist', async () => {
       await status.create({description: attributes.descrip,
-        availability: attributes.available});
+        availability: true});
       await status.create({description: "studying",
         availability: false});
       try {
@@ -52,9 +52,9 @@ describe('Status DB API', () => {
   });
 
   describe('#findOneAndUpdate()', () => {
-    it('should failt to find and update a Status object that does not exist', async () => {
+    it('should fail to find and update a Status object that does not exist', async () => {
       try {
-        await status.findOneAndUpdate({availability: true}, {description: "studying",
+        await status.findOneAndUpdate({availability: true}, {description: "meowcats",
           availability: false});
       } catch (e) { return;}
       assert(false);
@@ -63,9 +63,9 @@ describe('Status DB API', () => {
     it('should find and update a Status object successfully', async () => {
       const {_id} = await status.create({description: attributes.descrip,
         availability: attributes.available});
-      const stat = await status.findOneAndUpdate(_id, {description: "studying",
+      const stat =  await status.findOneAndUpdate(_id, {description: "hello youtube",
         availability: false});
-      assert.equal(stat.description, "potato");
+      assert.equal(stat.description, "hello youtube");
       assert.equal(stat.availability, false);
     });
   });

@@ -31,7 +31,7 @@ export async function findOne(attributes) {
  * @returns {Promise}: the updated Status object
  */
 export async function findOneAndUpdate(conditions, updates, options = null) {
-  const status = await Status.findOneAndUpdate(conditions, updates, options).exec();
+  const status = await Status.findOneAndUpdate(conditions, updates, {new: true}).exec();
   if ((status ==  null)) {
     throw new Error(`Could not find and update status with attributes:
       ${conditions} with updates ${updates}`);
