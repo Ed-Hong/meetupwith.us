@@ -9,7 +9,7 @@ var _bluebird = require('bluebird');
 
 /**
  * Creates a Status object based off the schema
- * @param {*} attributes: the attributes to add to the hour of the producers
+ * @param {*} attributes: the attributes to add to the status
  * @returns {Promise} the created object
  */
 
