@@ -31,7 +31,10 @@ let create = exports.create = (() => {
 
 let findOne = exports.findOne = (() => {
   var _ref2 = (0, _bluebird.coroutine)(function* (attributes) {
-    return yield Status.findOne(attributes).exec();
+    const status = yield Status.findOne(attributes).exec();
+    if (status == null) throw new Error(`Could not find and 
+    update status with attributes ${ attributes }`);
+    return status;
   });
 
   return function findOne(_x2) {
@@ -39,13 +42,23 @@ let findOne = exports.findOne = (() => {
   };
 })();
 
+/**
+ * 
+ * @param {Object} conditions: the conditions to find the object by
+ * @param {Object} updates: the updated fields
+ * @param {Object} options: options to pass for the query and update
+ * @returns {Promise}: the updated Status object
+ */
+
+
 let findOneAndUpdate = exports.findOneAndUpdate = (() => {
   var _ref3 = (0, _bluebird.coroutine)(function* (conditions, updates) {
     let options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
     const status = yield Status.findOneAndUpdate(conditions, updates, options).exec();
-    if (Utils.isEmpty(status)) {
-      throw new Error(`Could not find and update status with attributes: ${ conditions } with updates ${ updates }`);
+    if (status == null) {
+      throw new Error(`Could not find and update status with attributes:
+      ${ conditions } with updates ${ updates }`);
     }
     return status;
   });
@@ -61,6 +74,6 @@ var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const Status = _index2.default.Status;
+const Status = _index2.default.Status; // created by apoovey 12-26-16
 
 //# sourceMappingURL=status.compiled.js.map

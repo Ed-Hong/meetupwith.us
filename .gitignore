@@ -23,12 +23,15 @@
 
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
-
 ## File-based project format:
 *.iws
 ## log lol
 *npm-debug.log
 ## Plugin-specific files:
+
+#compiled/js
+*compiled.js
+*js.map
 
 # IntelliJ
 /out/
