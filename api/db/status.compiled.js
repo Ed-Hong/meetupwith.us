@@ -55,7 +55,7 @@ let findOneAndUpdate = exports.findOneAndUpdate = (() => {
   var _ref3 = (0, _bluebird.coroutine)(function* (conditions, updates) {
     let options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
-    const status = yield Status.findOneAndUpdate(conditions, updates, options).exec();
+    const status = yield Status.findOneAndUpdate(conditions, updates, { new: true }).exec();
     if (status == null) {
       throw new Error(`Could not find and update status with attributes:
       ${ conditions } with updates ${ updates }`);

@@ -22,7 +22,6 @@ describe('Status DB API', () => {
     descrip: "Hello World!" // eslint-disable-line
   };
   beforeEach((0, _bluebird.coroutine)(function* () {
-    console.log('clearing');
     yield (0, _index.clear)();
   }));
 
@@ -47,7 +46,7 @@ describe('Status DB API', () => {
 
     it('should fail to find a Status object when several exist', (0, _bluebird.coroutine)(function* () {
       yield status.create({ description: attributes.descrip,
-        availability: attributes.available });
+        availability: true });
       yield status.create({ description: "studying",
         availability: false });
       try {
@@ -70,9 +69,9 @@ describe('Status DB API', () => {
   });
 
   describe('#findOneAndUpdate()', () => {
-    it('should failt to find and update a Status object that does not exist', (0, _bluebird.coroutine)(function* () {
+    it('should fail to find and update a Status object that does not exist', (0, _bluebird.coroutine)(function* () {
       try {
-        yield status.findOneAndUpdate({ availability: true }, { description: "studying",
+        yield status.findOneAndUpdate({ availability: true }, { description: "meowcats",
           availability: false });
       } catch (e) {
         return;
@@ -86,9 +85,9 @@ describe('Status DB API', () => {
 
       const _id = _ref9._id;
 
-      const stat = yield status.findOneAndUpdate(_id, { description: "studying",
+      const stat = yield status.findOneAndUpdate(_id, { description: "hello youtube",
         availability: false });
-      _assert2.default.equal(stat.description, "potato");
+      _assert2.default.equal(stat.description, "hello youtube");
       _assert2.default.equal(stat.availability, false);
     }));
   });
