@@ -1,0 +1,17 @@
+{
+  "Server": {
+    "protocol": "http",
+    "port": 3000
+  },
+  "MongoDb": {
+    "username": "tester",
+    "password": "password",
+    "database": "meetup_test",
+    "host": "ds145118.mlab.com",
+    "port": "45118"
+  },
+  "NodeEnv": "development",
+  "AppBranch": "local"
+}
+
+
