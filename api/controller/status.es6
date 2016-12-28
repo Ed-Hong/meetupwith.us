@@ -16,7 +16,7 @@ export async function create(descrip, bool ) {
  * @returns {Promise}: the found Status
  */
 export async function findById(_id) {
-  return await Status.findOne({_id});
+  return await Status.findOne(_id);
 }
 
 /**

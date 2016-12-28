@@ -30,8 +30,9 @@
 ## Plugin-specific files:
 
 #compiled/js
-*.compiled.js
-*.compiled.js.map
+*compiled.js
+*js.map
+
 # IntelliJ
 /out/
 

@@ -32,7 +32,7 @@ let create = exports.create = (() => {
 
 let findById = exports.findById = (() => {
   var _ref2 = (0, _bluebird.coroutine)(function* (_id) {
-    return yield Status.findOne({ _id });
+    return yield Status.findOne(_id);
   });
 
   return function findById(_x3) {

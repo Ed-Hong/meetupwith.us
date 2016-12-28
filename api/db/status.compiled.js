@@ -47,7 +47,7 @@ let findOne = exports.findOne = (() => {
  * @param {Object} conditions: the conditions to find the object by
  * @param {Object} updates: the updated fields
  * @param {Object} options: options to pass for the query and update
- * @returns {Promise}
+ * @returns {Promise}: the updated Status object
  */
 
 
@@ -57,7 +57,8 @@ let findOneAndUpdate = exports.findOneAndUpdate = (() => {
 
     const status = yield Status.findOneAndUpdate(conditions, updates, options).exec();
     if (status == null) {
-      throw new Error(`Could not find and update status with attributes: ${ conditions } with updates ${ updates }`);
+      throw new Error(`Could not find and update status with attributes:
+      ${ conditions } with updates ${ updates }`);
     }
     return status;
   });
