@@ -31,7 +31,10 @@ let create = exports.create = (() => {
 
 let findOne = exports.findOne = (() => {
   var _ref2 = (0, _bluebird.coroutine)(function* (attributes) {
-    return yield Status.findOne(attributes).exec();
+    const status = yield Status.findOne(attributes).exec();
+    if (status == null) throw new Error(`Could not find and 
+    update status with attributes ${ attributes }`);
+    return status;
   });
 
   return function findOne(_x2) {
@@ -70,6 +73,6 @@ var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const Status = _index2.default.Status;
+const Status = _index2.default.Status; // created by apoovey 12-26-16
 
 //# sourceMappingURL=status.compiled.js.map

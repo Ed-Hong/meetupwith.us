@@ -9,6 +9,7 @@ describe('Status DB API', () => {
     descrip: "Hello World!" // eslint-disable-line
   };
   beforeEach(async () => {
+    console.log('clearing');
     await clear();
   });
 
@@ -22,14 +23,15 @@ describe('Status DB API', () => {
   });
 
   describe('#findOne()', () => {
-    it('should failt to find an uncreated Status object', async () => {
+    it('should fail to find an uncreated Status object', async () => {
         try{
-          await status.findOne({availability: true});
+          await status.findOne({description: "Hello World!"});
+
         } catch(e) { return;}
         assert(false);
     });
 
-    it('should failt to find a Status object when several exist', async () => {
+    it('should fail to find a Status object when several exist', async () => {
       await status.create({description: attributes.descrip,
         availability: attributes.available});
       await status.create({description: "studying",
@@ -62,9 +64,9 @@ describe('Status DB API', () => {
     it('should find and update a Status object successfully', async () => {
       const {_id} = await status.create({description: attributes.descrip,
         availability: attributes.available});
-      const stat = await status.findOneAndUpdate({_id}, {description: "studying",
+      const stat = await status.findOneAndUpdate(_id, {description: "studying",
         availability: false});
-      assert.equal(stat.description, "studying");
+      assert.equal(stat.description, "potato");
       assert.equal(stat.availability, false);
     });
   });

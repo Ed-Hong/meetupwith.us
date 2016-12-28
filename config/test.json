@@ -4,11 +4,11 @@
     "port": 3000
   },
   "MongoDb": {
-    "username": "botty",
-    "password": "password",
-    "database": "meetup_db",
-    "host": "ds141128.mlab.com",
-    "port": "41128"
+    "username": "apoovey",
+    "password": "abc123",
+    "database": "heroku_ghm9fvzv",
+    "host": "ds145148.mlab.com",
+    "port": "45148"
   },
   "NodeEnv": "development",
   "AppBranch": "local"

@@ -17,7 +17,10 @@ export async function create(attributes) {
  *@returns {Promise}: returns a SocketToken object
  */
 export async function findOne(attributes) {
-  return await Status.findOne(attributes).exec();
+  const status = await Status.findOne(attributes).exec();
+  if(status == null) throw new Error(`Could not find and 
+    update status with attributes ${attributes}`);
+  return status
 }
 
 /**
@@ -25,12 +28,13 @@ export async function findOne(attributes) {
  * @param {Object} conditions: the conditions to find the object by
  * @param {Object} updates: the updated fields
  * @param {Object} options: options to pass for the query and update
- * @returns {Promise}
+ * @returns {Promise}: the updated Status object
  */
 export async function findOneAndUpdate(conditions, updates, options = null) {
   const status = await Status.findOneAndUpdate(conditions, updates, options).exec();
   if ((status ==  null)) {
-    throw new Error(`Could not find and update status with attributes: ${conditions} with updates ${updates}`);
+    throw new Error(`Could not find and update status with attributes:
+      ${conditions} with updates ${updates}`);
   }
   return status;
 }
