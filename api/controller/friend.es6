@@ -9,7 +9,7 @@ import * as Friend from '../db/friend.es6';
  * @param {String} email: the Friend object's email address
  * @param {String} profileImage: a URL to the Friend object's profile picture
  * @param {Boolean} enabled: the Friend object's enabled attribute
- * @param {Status} availability: the Friend object's Status
+ * @param {Promise} availability: the Friend object's Status
  * @returns {Promise}: the created Status object
  */
 
@@ -107,14 +107,4 @@ export async function updateProfileImage(_id , profileImage) {
  */
 export async function updateEnabled(_id , enabled) {
     return await Friend.findOneAndUpdate({_id}, {enabled});
-}
-
-/**
- * Finds a Friend object and updates the availability of it
- * @param {ObjectId} _id: the ObjectId to query with
- * @param {Boolean} availability: the updated availability
- * @returns {Promise}: the updated Friend object
- */
-export async function updateAvailability(_id , availability) {
-    return await Friend.findOneAndUpdate({_id}, {availability});
 }
