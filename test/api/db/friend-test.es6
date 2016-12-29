@@ -4,7 +4,7 @@ import * as status from '../../../api/db/status.es6';
 import {clear} from '../../../models/mongo/index.es6';
 import assert from 'assert';
 
-describe('Status DB API', () => {
+describe('Friend DB API', () => {
     const statusAttributes = {
         available: true,
         descrip: "Hello World!" // eslint-disable-line

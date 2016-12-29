@@ -1,5 +1,7 @@
 // created by ehong on 12-27-16
 import models from '../../models/mongo/index.es6';
+import * as Utils from '../../lib/utils.es6';
+
 const Friend = models.Friend;
 
 /**
@@ -32,7 +34,7 @@ export async function findOne(attributes) {
  */
 export async function findOneAndUpdate(conditions, updates, options = null) {
     const friend = await Friend.findOneAndUpdate(conditions, updates, {new: true}).exec();
-    if ((friend ==  null)) {
+    if (Utils.isEmpty(friend)) {
         throw new Error(`Could not find and update status with attributes:
       ${conditions} with updates ${updates}`);
     }
