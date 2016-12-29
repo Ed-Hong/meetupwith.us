@@ -87,7 +87,7 @@ let updateAvailability = exports.updateAvailability = (() => {
 
 let updateDescription = exports.updateDescription = (() => {
   var _ref5 = (0, _bluebird.coroutine)(function* (_id, description) {
-    return yield Status.findOneAndUpdate(_id, { description }, { new: true });
+    return yield Status.findOneAndUpdate({ _id }, { description }, { new: true });
   });
 
   return function updateDescription(_x9, _x10) {

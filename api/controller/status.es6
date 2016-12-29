@@ -47,5 +47,5 @@ export async function updateAvailability(_id , availability) {
  * @returns {Promise}: the updated Status object
  */
 export async function updateDescription(_id, description) {
-  return await Status.findOneAndUpdate(_id, {description}, {new: true});
+  return await Status.findOneAndUpdate({_id}, {description}, {new: true});
 }
