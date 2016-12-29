@@ -32,7 +32,7 @@ let create = exports.create = (() => {
 let findOne = exports.findOne = (() => {
   var _ref2 = (0, _bluebird.coroutine)(function* (attributes) {
     const status = yield Status.findOne(attributes).exec();
-    if (status == null) throw new Error(`Could not find and 
+    if (utils.isEmpty(status)) throw new Error(`Could not find and 
     update status with attributes ${ attributes }`);
     return status;
   });
@@ -55,8 +55,8 @@ let findOneAndUpdate = exports.findOneAndUpdate = (() => {
   var _ref3 = (0, _bluebird.coroutine)(function* (conditions, updates) {
     let options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
-    const status = yield Status.findOneAndUpdate(conditions, updates, { new: true }).exec();
-    if (status == null) {
+    const status = yield Status.findOneAndUpdate(conditions, updates, options).exec();
+    if (utils.isEmpty(status)) {
       throw new Error(`Could not find and update status with attributes:
       ${ conditions } with updates ${ updates }`);
     }
@@ -71,6 +71,12 @@ let findOneAndUpdate = exports.findOneAndUpdate = (() => {
 var _index = require('../../models/mongo/index.compiled.js');
 
 var _index2 = _interopRequireDefault(_index);
+
+var _utils = require('../../lib/utils.compiled.js');
+
+var utils = _interopRequireWildcard(_utils);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

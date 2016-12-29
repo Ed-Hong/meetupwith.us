@@ -64,7 +64,7 @@ describe('Status DB API', () => {
       const {_id} = await status.create({description: attributes.descrip,
         availability: attributes.available});
       const stat =  await status.findOneAndUpdate(_id, {description: "hello youtube",
-        availability: false});
+        availability: false}, {new:true});
       assert.equal(stat.description, "hello youtube");
       assert.equal(stat.availability, false);
     });

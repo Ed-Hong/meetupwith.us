@@ -62,7 +62,7 @@ describe('Status Controller API', () => {
       assert(false);
     });
 
-    it('should update a status object availability', async () => {
+    it('should update a status objects description', async () => {
       const {_id} = await status.create(attributes.descrip, attributes.available);
       const stat = await status.updateDescription(_id, "potato farming");
       assert.equal(stat.description, "potato farming");

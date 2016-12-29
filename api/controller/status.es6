@@ -27,7 +27,7 @@ export async function findById(_id) {
  * @returns {Promise}: the updated Status object
  */
 export async function findOneAndUpdate(_id, description, availability) {
-  return await Status.findOneAndUpdate(_id, {description, availability});
+  return await Status.findOneAndUpdate(_id, {description, availability}, {new: true});
 }
 
 /**
@@ -37,7 +37,7 @@ export async function findOneAndUpdate(_id, description, availability) {
  * @returns {Promise}: the updated Status object
  */
 export async function updateAvailability(_id , availability) {
-  return await Status.findOneAndUpdate(_id, {availability});
+  return await Status.findOneAndUpdate(_id, {availability}, {new: true});
 }
 
 /**
@@ -47,5 +47,5 @@ export async function updateAvailability(_id , availability) {
  * @returns {Promise}: the updated Status object
  */
 export async function updateDescription(_id, description) {
-  return await Status.findOneAndUpdate(_id, {description});
+  return await Status.findOneAndUpdate({_id}, {description}, {new: true});
 }
