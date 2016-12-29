@@ -1,6 +1,7 @@
 // created by apoovey 12-26-16
 import models from '../../models/mongo/index.es6';
 const Status = models.Status;
+import * as utils from '../../lib/utils.es6';
 
 /**
  * Creates a Status object based off the schema
@@ -18,7 +19,7 @@ export async function create(attributes) {
  */
 export async function findOne(attributes) {
   const status = await Status.findOne(attributes).exec();
-  if(status == null) throw new Error(`Could not find and 
+  if(utils.isEmpty(status)) throw new Error(`Could not find and 
     update status with attributes ${attributes}`);
   return status
 }
@@ -31,8 +32,8 @@ export async function findOne(attributes) {
  * @returns {Promise}: the updated Status object
  */
 export async function findOneAndUpdate(conditions, updates, options = null) {
-  const status = await Status.findOneAndUpdate(conditions, updates, {new: true}).exec();
-  if ((status ==  null)) {
+  const status = await Status.findOneAndUpdate(conditions, updates, options).exec();
+  if (utils.isEmpty(status)) {
     throw new Error(`Could not find and update status with attributes:
       ${conditions} with updates ${updates}`);
   }
