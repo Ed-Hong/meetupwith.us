@@ -36,7 +36,7 @@ describe('Status DB API', () => {
       await status.create({description: "studying",
         availability: false});
       try {
-        await findOne({description: "goodbye world"});
+        await status.findOne({description: "goodbye world"});
       } catch (e) {
         return;
       } assert(false);
