@@ -86,11 +86,7 @@ describe('Status DB API', () => {
       const _id = _ref9._id;
 
       const stat = yield status.findOneAndUpdate(_id, { description: "hello youtube",
-<<<<<<< HEAD
-        availability: false });
-=======
         availability: false }, { new: true });
->>>>>>> b0272e02655b850969665a215ae21d3d46562b5a
       _assert2.default.equal(stat.description, "hello youtube");
       _assert2.default.equal(stat.availability, false);
     }));

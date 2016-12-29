@@ -1,6 +1,8 @@
 // created by apoovey 12-26-16
 import models from '../../models/mongo/index.es6';
 const User = models.User;
+import * as Utils from '../../lib/utils.es6'
+import _ from 'lodash';
 
 /**
  * Creates a User object based off the schema
@@ -14,14 +16,21 @@ export async function create(attributes) {
 /**
  *Returns a User object given a query
  *@param {Object} attributes: key value pairs of the attributes we want to query by
+ * @param {*} populateFields: the fields to populate query with
  *@returns {Promise}: returns a SocketToken object
  */
-export async function findOne(attributes) {
-  const user = await User.findOne(attributes).exec();
-  if(user == null) throw new Error(`Could not find and 
-    update status with attributes ${attributes}`);
-  return user
+export async function findOne(attributes, populateFields = []) {
+  let findQuery = User.findOne(attributes);
+  findQuery = _.reduce(populateFields, (query, field) =>
+      findQuery.populate(field),
+    findQuery);
+  const user = await findQuery.exec();
+  if (Utils.isEmpty(user)) {
+    throw new Error(`Could not find producer with attributes: ${JSON.stringify(attributes)}`);
+  }
+  return user;
 }
+
 
 /**
  *
