@@ -25,7 +25,7 @@ export async function create(firstName, lastName, phoneNumber, email, profileIma
 }
 
 /**
- * Finds a Friend from the obectId
+ * Finds a Friend from the objectId
  * @param {ObjectId}_id : the objectId to find the Friend from
  * @returns {Promise}: the found Friend
  */

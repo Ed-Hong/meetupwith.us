@@ -77,7 +77,7 @@ describe('Friend Controller API', () => {
             assert.equal(fr.email, attributes.email);
             assert.equal(fr.profileImage, attributes.profileImage);
             assert.equal(fr.enabled, attributes.enabled);
-            assert.deepEqual(fr.availability, stat._id);
+            assert.deepEqual(fr.availability._id, stat._id);
         });
     });
 
