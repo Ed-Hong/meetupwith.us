@@ -30,7 +30,7 @@ export async function create(firstName, lastName, phoneNumber, email, profileIma
  * @returns {Promise}: the found Friend
  */
 export async function findById(_id) {
-    return await Friend.findOne(_id);
+    return await Friend.findOne(_id, ['availability']);
 }
 
 /**
