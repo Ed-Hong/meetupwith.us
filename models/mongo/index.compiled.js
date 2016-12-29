@@ -67,7 +67,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const mongoConfig = _config2.default.get('MongoDb');
 _mongoose2.default.Promise = _bluebird2.default;
-//mongodb://<dbuser>:<dbpassword>@ds145148.mlab.com:45148/heroku_ghm9fvzv
 _mongoose2.default.connect(`mongodb://${ mongoConfig.username }:${ mongoConfig.password }@${ mongoConfig.host }:${ mongoConfig.port }/${ mongoConfig.database }`);
 console.log(`Mongo DB [host|port|database]: [${ mongoConfig.host }|${ mongoConfig.port }|${ mongoConfig.database }]`);
 

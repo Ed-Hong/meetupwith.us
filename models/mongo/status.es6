@@ -3,13 +3,11 @@ import mongoose from 'mongoose';
 
 const statusSchema = new mongoose.Schema({
     description: {
-      type: String,
-      required: false
+      type: String
     },
     availability: {
       type: Boolean,
-      required: true,
-      default: false
+      required: true
     }
   },
   {

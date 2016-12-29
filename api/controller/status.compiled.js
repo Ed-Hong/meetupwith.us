@@ -51,7 +51,7 @@ let findById = exports.findById = (() => {
 
 let findOneAndUpdate = exports.findOneAndUpdate = (() => {
   var _ref3 = (0, _bluebird.coroutine)(function* (_id, description, availability) {
-    return yield Status.findOneAndUpdate(_id, { description, availability });
+    return yield Status.findOneAndUpdate(_id, { description, availability }, { new: true });
   });
 
   return function findOneAndUpdate(_x4, _x5, _x6) {
@@ -69,7 +69,7 @@ let findOneAndUpdate = exports.findOneAndUpdate = (() => {
 
 let updateAvailability = exports.updateAvailability = (() => {
   var _ref4 = (0, _bluebird.coroutine)(function* (_id, availability) {
-    return yield Status.findOneAndUpdate(_id, { availability });
+    return yield Status.findOneAndUpdate(_id, { availability }, { new: true });
   });
 
   return function updateAvailability(_x7, _x8) {
@@ -87,7 +87,7 @@ let updateAvailability = exports.updateAvailability = (() => {
 
 let updateDescription = exports.updateDescription = (() => {
   var _ref5 = (0, _bluebird.coroutine)(function* (_id, description) {
-    return yield Status.findOneAndUpdate(_id, { description });
+    return yield Status.findOneAndUpdate({ _id }, { description }, { new: true });
   });
 
   return function updateDescription(_x9, _x10) {

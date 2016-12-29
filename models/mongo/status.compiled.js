@@ -12,13 +12,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const statusSchema = new _mongoose2.default.Schema({
   description: {
-    type: String,
-    required: false
+    type: String
   },
   availability: {
     type: Boolean,
-    required: true,
-    default: false
+    required: true
   }
 }, {
   timestamps: true
