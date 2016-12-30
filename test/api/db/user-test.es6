@@ -1,3 +1,4 @@
+
 // created by apoovey 12-28-16
 import * as status from '../../../api/db/status.es6';
 import * as friend from '../../../api/db/friend.es6'
@@ -207,4 +208,30 @@ describe('User DB API', () => {
     });
   });
 
+  it('should find a User object and update the username', async () => {
+    const stat = await status.create({description: attributes.descrip,
+      availability: attributes.availability});
+
+    const fr = await friend.create({
+      firstName: attributes.firstName,
+      lastName: attributes.lastName,
+      phoneNumber: attributes.phoneNumber,
+      email: attributes.email,
+      profileImage: attributes.profileImage,
+      enabled: attributes.enabled,
+      availability: stat
+    });
+
+    const {_id} =  await User.create({
+      publicInfo: fr,
+      userName: attributes.userName,
+      password: attributes.password
+    });
+
+    const user = await User.findOneAndUpdate(_id, {userName:'eddy'}, {new: true});
+
+    assert.equal(user.password, attributes.password);
+    assert.equal(user.userName, 'eddy');
+    assert.deepEqual(user.publicInfo, fr._id);
+  });
 });
