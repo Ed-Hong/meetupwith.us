@@ -1,6 +1,7 @@
 // created by ehong on 12-27-16
 import models from '../../models/mongo/index.es6';
 import * as Utils from '../../lib/utils.es6';
+import _ from "lodash"
 
 const Friend = models.Friend;
 
@@ -13,17 +14,43 @@ const Friend = models.Friend;
 export async function create(attributes) {
     return await (new Friend(attributes)).save();
 }
+
 /**
- *Returns a Friend object given a query
- *@param {Object} attributes: key value pairs of the attributes we want to query by
- *@returns {Promise}: returns a SocketToken object
+ * Returns a Friend object given a query
+ *
+ * @param {Object} attributes: key value pairs of the attributes we want to query by
+ * @param {Array<String>} populateFields: fields to populate query with
+ * @returns {Promise}: returns a Friend object
  */
-export async function findOne(attributes) {
-    const friend = await Friend.findOne(attributes).exec();
-    if(friend == null) throw new Error(`Could not find and 
-    update friend with attributes ${attributes}`);
-    return friend
+export async function findOne(attributes, populateFields = []) {
+    let findQuery = Friend.findOne(attributes);
+    findQuery = _.reduce(populateFields, (query, field) =>
+            findQuery.populate(field),
+        findQuery);
+    const friend = await findQuery.exec();
+    if (Utils.isEmpty(friend)) {
+        throw new Error(`Could not find producer with attributes: ${JSON.stringify(attributes)}`);
+    }
+    return friend;
 }
+
+/**
+ * Returns a Query object for finding Friends
+ *
+ * @param {Object} conditions: key value pairs of the conditions we want to query by
+ * @param {Number} limit: number of objects to limit the query to find
+ * @param {Object} sortFields: key value pairs of the fields to sort on Ex: {createdAt: 'descending'}
+ * @param {Array<String>} populateFields: fields to populate query with
+ * @returns {Promise}: returns the Friends found
+ */
+export async function find(conditions, limit, sortFields, populateFields) {
+    let findQuery = Friend.find(conditions);
+    findQuery = _.reduce(populateFields, (query, field) =>
+        findQuery.populate(field), findQuery);
+    if (limit <= 0) return await findQuery.sort(sortFields).exec();
+    return await findQuery.limit(limit).sort(sortFields).exec();
+}
+
 
 /**
  *
