@@ -16,7 +16,7 @@ describe('Friend DB API', () => {
         phoneNumber:"2142644998",
         email:"bobtester@gmail.com",
         profileImage:"http://i.imgur.com/KxFO2vS.jpg",
-        enabled:true,
+        enabled:true
         //availability: statusAttributes
     };
     beforeEach(async () => {

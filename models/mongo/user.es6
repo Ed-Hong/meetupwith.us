@@ -4,21 +4,22 @@ const userSchema = new mongoose.Schema({
 
   publicInfo: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Friend'
+    ref: 'Friend',
+    required: true
   },
   friendList: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Friend'
   }],
-  username: {
+  userName: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    sparse: true
   },
   password: {
     type: String,
-    required: true,
-    unique: false
+    required: true
   }
 }, {
   timestamps: true
