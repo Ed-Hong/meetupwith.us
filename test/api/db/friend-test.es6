@@ -51,7 +51,7 @@ describe('Friend DB API', () => {
     describe('#findOne()', () => {
         it('should fail to find an uncreated Friend object', async () => {
             try{
-                await friend.findOne({firstName: "This should fail"});
+                await friend.findOne({firstName: "This should fail"}, ['availability']);
 
             } catch(e) { return;}
             assert(false);
@@ -81,7 +81,7 @@ describe('Friend DB API', () => {
                 availability: stat
             });
             try {
-                await findOne({firstName: "This should also fail"});
+                await findOne({firstName: "This should also fail"}, ['availability']);
             } catch (e) {
                 return;
             } assert(false);
@@ -101,7 +101,7 @@ describe('Friend DB API', () => {
                 availability: stat
             });
 
-            const fr = await friend.findOne(_id);
+            const fr = await friend.findOne(_id, ['availability']);
 
             assert.equal(fr.firstName, attributes.firstName);
             assert.equal(fr.lastName, attributes.lastName);
@@ -109,7 +109,7 @@ describe('Friend DB API', () => {
             assert.equal(fr.email, attributes.email);
             assert.equal(fr.profileImage, attributes.profileImage);
             assert.equal(fr.enabled, attributes.enabled);
-            assert.deepEqual(fr.availability, stat._id);
+            assert.deepEqual(fr.availability._id, stat._id);
         });
     });
 
