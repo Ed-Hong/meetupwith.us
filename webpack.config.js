@@ -1,8 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
-     
+
  module.exports = {
-     entry: './app.compiled.js',
+     entry: './app/main.js',
      output: {
          path: path.resolve(__dirname, 'build'),
          filename: 'app.bundle.js'
@@ -10,10 +10,11 @@ var webpack = require('webpack');
      module: {
          loaders: [
              {
-                 test: /\.js$/,
+                 test: /.jsx?$/,
                  loader: 'babel-loader',
+                 exclude: /node_modules/,
                  query: {
-                     presets: ['es2016', 'react']
+                     presets: ['es2015', 'react']
                  }
              }
          ]
